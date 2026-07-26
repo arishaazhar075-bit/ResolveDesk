@@ -1,0 +1,320 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* container */
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 60px 20px 20px; /* same spacing, no top gap */
+}
+
+/* cards */
+.card {
+  background: #3C507D;
+  border-radius: 15px;
+  padding: 18px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  border: 1px solid #E0C58F;
+}
+
+/* headings */
+.card h3 {
+  color: #E0C58F;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* text */
+.card p {
+  color: #F5F0E9;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+/* GLOBAL BUTTON (for cards only feel) */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #E0C58F;
+  color: #112250;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #D9CBC2;
+}
+
+/* INPUTS */
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px;
+  background: #F5F0E9;
+  color: #112250;
+  box-sizing: border-box;
+}
+
+/* ================= LOGIN ================= */
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background: #3C507D;
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.login-title {
+  color: #E0C58F;
+}
+
+.login-subtitle {
+  color: #ddd;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* FIX: login button override */
+.login-btn {
+  width: auto;
+  padding: 10px 25px;
+  display: block;
+  margin: 15px auto;
+}
+
+/* ================= LOADER ================= */
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #E7C7B5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.loader-gif {
+  width: 450px;
+  max-width: 80%;
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back-btn {
+  width: auto;
+  position: absolute;   /* ✅ move to top */
+  top: 20px;            /* distance from top */
+  left: 20px;           /* distance from left */
+  padding: 8px 16px;
+  background: #C8A97E;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background: #B8956B;
+}
+
+/* ================= TITLES ================= */
+
+.dashboard-title,
+.complaints-title {
+  text-align: center;
+  color: #4A4E69;
+}
+
+/* ================= STATS ================= */
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.stat-box {
+  background: #3C507D;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  width: 33%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.stat-box h4 {
+  margin: 0;
+  font-size: 13px;
+  color: #E0C58F;
+}
+
+.stat-box p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Make both same height & clean */
+.filter-bar input,
+.filter-bar select {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #F5F0E9;
+  color: #112250;
+}
+
+/* Control widths properly */
+.filter-bar input {
+  width: 250px;   /* adjust if needed */
+}
+
+.filter-bar select {
+  width: 140px;
+}
+/* wrapper */
+.login-wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* gradient background */
+.bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    #E7E2DE 0%,
+    #E0C58F 40%,
+    #3C507D 100%
+  );
+  transition: all 0.8s ease;
+}
+
+/* blur after delay */
+.bg-gradient.blur {
+  filter: blur(8px);
+  transform: scale(1.05);
+}
+
+/* hide login initially */
+.login-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* show state */
+.login-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* 🌸 Global Background (for all pages) */
+.app-bg {
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* 🔔 Toast Notification */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;   /* 👉 move to right */
+
+  background: #112250;
+  color: #E0C58F;
+
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  z-index: 9999;
+
+  width: 280px;  /* fixed width for better look */
+
+  animation: slideIn 0.4s ease;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.toast button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+
+  background: #E0C58F;
+  color: #112250;
+  font-weight: bold;
+  cursor: pointer;
+}
+.toast-center {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #112250;
+  color: #E0C58F;
+
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  z-index: 9999;
+
+  animation: fadeDown 0.4s ease;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
